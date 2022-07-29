@@ -103,7 +103,7 @@ def randomNumber(diff, mode):
 def youWin(score):
   print("Your win!!!")
   score += 1
-  print(f"Your Score is {score}")
+  print(f"Your Score is {score} {'🏆'*score}")
   return {
     "life" : False,
     "score" : score,
@@ -116,10 +116,11 @@ def youLose(life,score):
 
   if life <= 0:
     print("Game Over!!!")
-    print(f"Your Score is {score}")
+    print(f"Your Score is {score} {'🏆'*score}")
     input("Please enter to continuous")
   if life > 0:
-    print(f"You have {life} left!!")
+    print(f"Your Score is {score} {'🏆'*score}")
+    print(f"You have {life} left!! {'💖'*life}")
     return {
       "life" : life,
       "score" : False,
@@ -173,7 +174,7 @@ while gameStart:
       print("2.Normal")
       print("3.Hard")
       print("4.Exit")
-      print("Warning we will only take the first digit in your input!!")
+      
       diff = int(input("Select your difficulty (1-3): "))
       if diff in range(1, 5):
         life = 5 #initial life
@@ -196,8 +197,8 @@ while gameStart:
       print("3.Hexadecimal")
       print("4.Reset")
       print("5.Exit")
-      print("Warning we will only take the first digit in your input!!")
-      mode = int(input("Select Game Mode (1-3): ")[0])
+      
+      mode = int(input("Select Game Mode (1-3): "))
       if mode in range(1, 6) :
         break
       else: 
